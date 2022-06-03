@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Kalkulator</string>
+
+    <string-array name="spinnercolors">
+        <item>AlmostBlack</item>
+        <item>Black</item>
+        <item>Gray</item>
+        <item>LightGray</item>
+    </string-array>
+
+    <string-array name="decimalpoints">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+</resources>

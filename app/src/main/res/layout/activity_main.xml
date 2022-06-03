@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/almostBlack"
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:background="@color/lightGrey"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/working"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLines="1"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="55sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/firstlayer"
+            style="@style/layerText"
+            android:text="1:"
+            app:layout_constraintBottom_toTopOf="@id/working"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/secondlayer" />
+
+        <TextView
+            android:id="@+id/secondlayer"
+            style="@style/layerText"
+            android:text="2:"
+            app:layout_constraintBottom_toTopOf="@id/firstlayer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/thirdlayer" />
+
+        <TextView
+            android:id="@+id/thirdlayer"
+            style="@style/layerText"
+            android:text="3:"
+            app:layout_constraintBottom_toTopOf="@id/secondlayer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fourthlayer" />
+
+        <TextView
+            android:id="@+id/fourthlayer"
+            style="@style/layerText"
+            android:text="4:"
+            app:layout_constraintBottom_toTopOf="@id/thirdlayer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/settings"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/lightGrey"
+            android:drawableBottom="@drawable/ic_baseline_settings_24"
+            android:onClick="goToSettings"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+        <Button
+            style="@style/buttonOperator"
+            android:text="DROP"
+            android:onClick="dropAction"/>
+        <Button
+            style="@style/buttonOperator"
+            android:text="SWAP"
+            android:onClick="swapAction"/>
+        <Button
+            style="@style/buttonOperator"
+            android:text="UNDO"
+            android:onClick="undoAction"/>
+        <Button
+            style="@style/buttonOperator"
+            android:textColor="@color/red"
+            android:text="AC"
+            android:onClick="allClearAction"/>
+
+        <Button
+            style="@style/buttonOperator"
+            android:onClick="backSpaceAction"
+            android:text="←"
+            android:textAlignment="center"
+            android:textSize="50sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+        <Button
+            android:background="@drawable/button_background"
+            style="@style/buttonNumber"
+            android:text="7"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="8"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="9"/>
+        <Button
+            style="@style/buttonOperator"
+            android:text="√" />
+        <Button
+            style="@style/buttonOperator"
+            android:text="y^x" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+        <Button
+            style="@style/buttonNumber"
+            android:text="4"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="5"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="6"/>
+        <Button
+            style="@style/buttonOperator"
+            android:text="x"/>
+        <Button
+            style="@style/buttonOperator"
+            android:text="÷"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+        <Button
+            style="@style/buttonNumber"
+            android:text="1"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="2"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="3"/>
+        <Button
+            style="@style/buttonOperator"
+            android:text="+"/>
+        <Button
+            style="@style/buttonOperator"
+            android:text="-"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+        <Button
+            style="@style/buttonNumber"
+            android:text="0"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="+/-"
+            android:onClick="changeSignAction"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="."
+            android:onClick="decimalPointAction"/>
+
+        <Button
+            style="@style/buttonOperator"
+            android:layout_weight="2"
+            android:background="@drawable/enter_button_background"
+            android:onClick="moveStackAction"
+            android:text="enter"
+            android:textColor="#455A64" />
+    </LinearLayout>
+
+
+</LinearLayout>
